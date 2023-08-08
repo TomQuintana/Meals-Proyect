@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import axios from "axios";
 import Alert from "./Alert";
 
@@ -20,17 +20,22 @@ const FormToAdd = () => {
       stock,
       category
     })
-
-    const data = await axios.post('http://localhost:4000/api/meal/register', saveMeal)
-    console.log(data.status);
-
-    if(data.status == 200) {
-      setAlerta({
-        msg: 'The food was saved correctly',
-        error: false
-      })
-    }
   }
+
+  useEffect(() => {
+    const registerMeal = async () => {
+
+      if (saveMeal.name !== undefined) {
+          await axios.post('http://localhost:4000/api/meal/register', saveMeal);
+        setAlerta({
+         msg: 'The food was saved correctly',
+         error: false
+       })
+      }
+    }
+
+    registerMeal()
+  }, [saveMeal]);
 
   const {msg} = alerta
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Alert from './Alert';
 import axios from 'axios';
 
@@ -17,17 +17,24 @@ const [saveMeal, setSaveMeal] = useState({});
       stock,
       bowl
     })
-
-    const data = await axios.put(`http://localhost:4000/api/meal/update/${id}`, saveMeal)
-    console.log(data.status);
-
-    if(data.status == 200) {
-      setAlerta({
-        msg: 'The food was Edited and Saved correctly',
-        error: false
-      })
-    }
+    
   }
+
+useEffect(() => {
+    const editMeal = async () => {
+
+      if (saveMeal.stock!== undefined) {
+          await axios.put(`http://localhost:4000/api/meal/update/${id}`, saveMeal);
+        setAlerta({
+         msg: 'The food was edit correctly',
+         error: false
+       })
+      }
+    }
+
+    editMeal()
+  }, [saveMeal]);
+
 
   const {msg} = alerta
 
