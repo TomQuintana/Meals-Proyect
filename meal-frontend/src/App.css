@@ -1,0 +1,45 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../img/food.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.centered-div {
+  width: 600px; 
+  background-color: #fff;
+  border-radius: 8px;   
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  overflow: hidden
+}
+
+.div-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.border-dotten {
+  border-bottom:  2px dashed gray;
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px); 
+  }
+}
+
+.animated-element {
+  animation: bounceUpDown 1s ease-in-out; 
+}
