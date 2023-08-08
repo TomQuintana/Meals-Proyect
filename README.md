@@ -1,23 +1,3 @@
-<!-- # This proyect is oriented to Food Administration -->
-<!---->
-<!-- ## Build with: -->
-<!--  ![JavaScript](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/100px-Node.js_logo.svg.png)  -->
-<!--  ![Typescript_logo_2020](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/60px-Typescript_logo_2020.svg.png)  -->
-<!--  ![MongoDB_Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/200px-MongoDB_Logo.svg.png)  -->
-<!--  ![Tailwind_CSS_Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tailwind_CSS_logo.svg/2880px-Tailwind_CSS_logo.svg.png)  -->
-<!---->
-<!---->
-<!-- ## For see all endpoint you can go to -->
-<!-- ``` -->
-<!--     http://localhost:4000/docs/ -->
-<!-- ``` -->
-<!-- ## Features -->
-<!-- - Add meals pasing: Name, stock, price, category, date -->
-<!-- - Modify Meals using id of meal -->
-<!-- - Deleted Meals using id of meal -->
-<!-- - Get all Meals -->
-<!-- o -->
-<!---->
 <h1 align="center">Meal Administration Proyect</h1>
 
 <h3 align="left">Description</h3>
@@ -56,32 +36,32 @@
     />   
 </p>
 
-## Estructura del Repositorio
+## Repository Structure
 ``` bash
 
 |-- backend/
-    |-- index.ts
-    |-- src/
-        |-- config/
-        |-- routes/
-        |-- models/
-        |-- controllers/
-        |-- helpers/
-    |-- ...
+|   |-- index.ts
+|   |-- src/
+|       |-- config/
+|       |-- routes/
+|       |-- models/
+|       |-- controllers/
+|       |-- helpers/
+|   |-- ...
 
 |-- frontend/
-    |-- src/
-        |-- app.tsx
-        |-- main.tsx
-        |-- App.css
-        |-- index.css
-        |-- components/
-    |-- ...
+|    |-- src/
+|       |-- app.tsx
+|       |-- main.tsx
+|       |-- App.css
+|       |-- index.css
+|       |-- components/
+|   |-- ...
 
 |-- README.md
 ```
 
-## Tecnologías Utilizadas 
+## Used Technology 
 - Frontend: ![React](https://img.shields.io/badge/-React-blue), ![React](https://img.shields.io/badge/-Typescript-blue), ![React](https://img.shields.io/badge/-Axios-purple), ![Tailwind](https://img.shields.io/badge/-Tailwind-lightblue)
 - Backend: ![Node.js](https://img.shields.io/badge/-Node.js-green) ![Express](https://img.shields.io/badge/-Express-lightgrey), ![React](https://img.shields.io/badge/-Typescript-blue) ![MongoDB](https://img.shields.io/badge/-MongoDB-brightgreen)
 - Gestión de Dependencias: ![MongoDB](https://img.shields.io/badge/-npm-brightgreen)
@@ -112,4 +92,10 @@ Delete /api/meal/delete/:id - To delete Meal, Dish or Ingredient
 ```
 ![AddMeals](https://res.cloudinary.com/dmg3cl9dc/image/upload/v1691520977/Screenshot_2023-08-08_at_13.06.22_twbpew.png)
 
-
+### Configuration and Use
+     - Clone this repository: git clone https://github.com/TomQuintana/Meals-Proyect.git
+     - Install the frontend dependencies: cd frontend && npm install
+     - Install the backend dependencies: cd backend && npm install
+     - Set environment variables as needed in the backend/config directory - .env.example
+     - Start the backend server: cd backend && npm start
+     - Start the frontend application in development mode: cd frontend && npm start
