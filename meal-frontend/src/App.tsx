@@ -4,13 +4,6 @@ import RemoveIcon from "./components/RemoveIcon";
 import EditButton from "./components/EditButton";
 import AddMealButton from "./components/AddMealButton";
 
-//podria generar un estado global para evaluar cuando ocurra un cambio este se actualive y renderice el componente princpal
-// const [componente global , setComponente global]
-// useEffect(() => {
-    // Vuelve a establecer el estado isListUpdated a false para evitar ejecuciones innecesarias del useEffect
-   // setListUpdated(false);
-  //}, [componente global]);
-
 function App() {
 
   type Meals = {
@@ -38,11 +31,8 @@ function App() {
 
   return (
     <>
-      <div className="flex justify-center mt-20 div-container mb-10 ">
-        <div className="ml-16">
-          
-        </div>
-        <div className="bg-white shadow-2xl centered-div h-auto ">
+      <div className="flex justify-center mt-20 div-container mb-10">
+        <div className="bg-white shadow-2xl centered-div h-auto">
           <div className="bg-sky-200 rounded-xl flex justify-center">
             <h1 className="text-3xl font-thin">Your Meals</h1>
            
