@@ -49,7 +49,7 @@ function App() {
               <div className="m-1">
                 <h1 key={index} className="text-xl bg-yellow-200 rounded-xl p-1 font-mono">{meal.name}</h1>
                 <div className="grid grid-cols-2 gap-4">
-                  {meal.stock > 1000 ? <p className="">Stock:<span>{meal.stock} kg</span></p> : <p className="font-bold text-lg">Stock: <span className="text-indigo-500 font-mono">{meal.stock}g</span></p> }
+                  {meal.stock > 1000 ? <p className="font-bold text-lg">Stock: <span className="text-indigo-500 font-mono">{meal.stock}kg</span></p> : <p className="font-bold text-lg">Stock: <span className="text-indigo-500 font-mono">{meal.stock}g</span></p> }
                   <p className="font-bold text-lg">
                     Category: <span className="font-mono text-lime-500">{meal.category}</span>
                   </p>
