@@ -1,39 +1,19 @@
 import { Request, Response } from 'express';
 import Meal from '../models/meal.model';
-import { isValidCategory } from '../helpers/mealsHelper';
+//import { isValidCategory } from '../helpers/mealsHelper';
+import Controller from '../services/controller.service';
+import ErrorHandler from '../services/errorHandlers';
 
-const registerMeal = async (req: Request, res: Response) => {
-  const {name} = req.body; 
-  const mealData = new Meal(req.body);
+const createMeal = async (req: Request, res: Response) => {
+  const service = new Controller(req.body)
 
-  const existName = await Meal.findOne({name}); 
+  const createMeal = await service.createMeal(req.body)
   
-  if (existName) {
-    return res.status(400).json({
-      msg: `Name: ${name}, is already register`
-    });  
+  if(!createMeal) {
+    return ErrorHandler.badRequest(res, `The Meal ${req.body.name} already created`)
   }
 
-  const validationCategory = isValidCategory(mealData.category);
-    
-  if (!validationCategory) {
-    return res.status(400).json({
-      msg: 'Invalid category'
-    });  
-  }
-
-  try {
-    const mealSave = await mealData.save();
-    return res.status(200).json({
-      mealSave
-    });
-    
-  } catch (error) {
-    res.status(500).json({ 
-      error: 'An internal server error occurred.'
-    });
-  }
-  
+  return res.status(201).json({msg: 'The food was created successfully'})
 };
 
 const updatedMeal = async (req: Request, res: Response) => {
@@ -90,7 +70,7 @@ const deleteMeals = async (req: Request, res: Response) => {
 //NOTE: filterType - not implented yet
 
 export {
-  registerMeal,
+  createMeal,
   obtainMeals,
   updatedMeal,
   deleteMeals,
