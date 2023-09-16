@@ -1,9 +1,9 @@
 import express from 'express';
-import { obtainMeals, registerMeal, updatedMeal, deleteMeals } from '../controllers/meal.controller';
+import { obtainMeals, createMeal, updatedMeal, deleteMeals } from '../controllers/meal.controller';
 
 const router = express.Router();
 
-router.post('/register', registerMeal);
+router.post('/create', createMeal);
 router.get('/all', obtainMeals);
 router.put('/update/:id', updatedMeal);
 router.delete('/delete/:id', deleteMeals);
@@ -15,7 +15,7 @@ router.delete('/delete/:id', deleteMeals);
    * @swagger
    * /register:
    *   post:
-   *     description: Register a new meals
+   *     description: Create a new meals or food
    *     parameters:
    *       - in: body
    *         name: body
